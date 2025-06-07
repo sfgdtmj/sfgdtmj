@@ -1,41 +1,82 @@
+
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Godsent</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap version link included only in bootstrap variant -->
-  </head>
-  <body>
-    <header>
-      <h1>Godsent</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Strona główna</a></li>
-          <li><a href="#">Katalog</a></li>
-          <li><a href="#">O nas</a></li>
-          <li><a href="#">Historia marki</a></li>
-          <li><a href="#">Na ludziach</a></li>
-          <li><a href="#">Kontakt</a></li>
-          <li><a href="#">🛒</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="intro">
-        <h2>Witamy w Godsent</h2>
-        <p>Styl komfortowy. Dla każdego.</p>
-      </section>
-      <section class="catalog">
-        <h2>Katalog</h2>
-        <div class="product-card">Produkt 1</div>
-        <div class="product-card">Produkt 2</div>
-        <div class="product-card">Produkt 3</div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2025 Godsent. Wszystkie prawa zastrzeżone.</p>
-    </footer>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Godsent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="logo">Godsent</div>
+  <nav>
+    <ul>
+      <li><a href="#">Kobieta</a></li>
+      <li><a href="#">Mężczyzna</a></li>
+      <li><a href="#">Akcesoria</a></li>
+      <li><a href="#">Lookbook</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="catalog">
+  <div class="filters">
+    <button data-filter="all">Wszystko</button>
+    <button data-filter="spodnie">Spodnie</button>
+    <button data-filter="kurtki">Kurtki</button>
+    <button data-filter="tshirty">T-shirty</button>
+  </div>
+
+  <div class="products">
+    <div class="product-card spodnie">
+      <img src="img/look1.jpg" alt="spodnie przód">
+      <span class="badge">Nowość</span>
+      <h3>Spodnie szerokie</h3>
+      <p class="price">349 zł</p>
+      <button>Zobacz</button>
+    </div>
+    <div class="product-card spodnie">
+      <img src="img/look2.jpg" alt="spodnie tył">
+      <h3>Spodnie z detalem</h3>
+      <p class="price">369 zł</p>
+      <button>Zobacz</button>
+    </div>
+    <div class="product-card kurtki">
+      <img src="img/look3.jpg" alt="Kurtka">
+      <span class="badge">Wyprzedaż</span>
+      <h3>Kurtka skórzana</h3>
+      <p class="price">599 zł</p>
+      <button>Zobacz</button>
+    </div>
+    <div class="product-card tshirty">
+      <img src="img/look4.jpg" alt="T-shirt czarny">
+      <h3>T-shirt oversize</h3>
+      <p class="price">149 zł</p>
+      <button>Zobacz</button>
+    </div>
+    <div class="product-card tshirty">
+      <img src="img/look5.jpg" alt="T-shirt tyłem">
+      <h3>T-shirt klasyczny</h3>
+      <p class="price">129 zł</p>
+      <button>Zobacz</button>
+    </div>
+  </div>
+</main>
+
+<section class="lookbook">
+  <img src="img/look1.jpg" alt="Look 1">
+  <img src="img/look2.jpg" alt="Look 2">
+  <img src="img/look3.jpg" alt="Look 3">
+  <img src="img/look4.jpg" alt="Look 4">
+  <img src="img/look5.jpg" alt="Look 5">
+</section>
+
+<footer>
+  <p>&copy; 2025 Godsent. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
 </html>

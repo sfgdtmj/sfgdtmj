@@ -1,52 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f5f0e6;
-  color: #3e2f25;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f5f0;
+  color: #222;
 }
 
 header {
-  background-color: #3e2f25;
-  color: white;
-  padding: 1em;
+  background-color: #fff;
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.5em;
+  color: #3e2f25;
 }
 
 nav ul {
+  display: flex;
   list-style: none;
-  display: flex;
-  gap: 1em;
-  padding: 0;
+  gap: 1.2em;
   margin: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
-.intro {
-  padding: 2em;
-  background-color: #e8d8c3;
-}
-
-.catalog {
-  display: flex;
-  gap: 1em;
-  padding: 2em;
+  padding: 0;
+  align-items: center;
   flex-wrap: wrap;
 }
 
+nav a {
+  text-decoration: none;
+  color: #3e2f25;
+  font-weight: 500;
+}
+
+.catalog {
+  padding: 2em;
+}
+
+.filters {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.5em;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  border: 1px solid #3e2f25;
+  background: white;
+  color: #3e2f25;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  background: #3e2f25;
+  color: white;
+}
+
+.products {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .product-card {
-  background-color: #d2b48c;
+  background: #fff;
+  border-radius: 10px;
   padding: 1em;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card img {
+  max-width: 100%;
   border-radius: 8px;
-  flex: 1;
-  min-width: 200px;
+  margin-bottom: 0.5em;
+}
+
+.product-card h3 {
+  margin: 0.5em 0 0.3em;
+  font-size: 1em;
+}
+
+.product-card .price {
+  color: #666;
+  margin-bottom: 1em;
+}
+
+.product-card button {
+  background: #3e2f25;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #a67c52;
+  color: white;
+  font-size: 0.75em;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
 }
 
 footer {
   text-align: center;
-  padding: 1em;
-  background-color: #3e2f25;
-  color: white;
+  padding: 2em;
+  background-color: #fff;
+  color: #666;
+}
+
+.lookbook {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1em 2em;
+  background-color: #f2eee7;
+}
+
+.lookbook img {
+  height: 300px;
+  border-radius: 8px;
+  margin-right: 1em;
+  display: inline-block;
 }
