@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godsent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .lookbook-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+    .lookbook-gallery img {
+        width: 160px;
+        height: auto;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .lookbook-gallery img:hover {
+        transform: scale(1.05);
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    .popup img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+    }
+    @media (max-width: 600px) {
+        .lookbook-gallery img {
+            width: 100px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Godsent</div>
+        <nav>
+            <ul>
+                <li><a href="#katalog">Katalog</a></li>
+                <li><a href="#onas">O nas</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li class="cart-icon">🛒</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Witamy w Godsent</h1>
+            <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej.</p>
+        </section>
+
+        <section id="katalog" class="katalog">
+            <h2>Katalog</h2>
+            <div class="categories">
+                <div class="category">Mężczyzna</div>
+                <div class="category">Kobieta</div>
+                <div class="category">Komfortowy styl</div>
+            </div>
+        </section>
+
+        <section id="onas" class="onas">
+            <h2>O nas</h2>
+            <p>Hej! Jesteśmy ekipą studentów, którzy po prostu chcieli robić fajne ubrania. Bez zadęcia, bez wielkich słów – po prostu rzeczy, które sami chcielibyśmy nosić.</p>
+        </section>
+
+        <section id="historia" class="historia">
+            <h2>Historia marki</h2>
+            <p>Wszystko zaczęło się od jednego projektu na zajęcia. Później doszliśmy do wniosku, że czemu nie pójść z tym dalej? Tak powstało Godsent – marka z sercem, za którą stoją zwykli ludzie z pasją.</p>
+        </section>
+
+        
+<section id="lookbook" class="lookbook">
+    <h2>Lookbook</h2>
+    <p>Przykłady naszych ciuchów na realnych osobach (wiesz, takich jak my i ty).</p>
+    <div class="lookbook-gallery">
+        <div class="product-card">
+            <img src="img/t-shirt.jpg" alt="T-shirt" onclick="openPreview(this)">
+            <h3>T-shirt oversize</h3>
+            <p>99 zł</p>
+        </div>
+        <div class="product-card">
+            <img src="img/koszula.jpg" alt="Koszula" onclick="openPreview(this)">
+            <h3>Koszula letnia</h3>
+            <p>139 zł</p>
+        </div>
+        <div class="product-card">
+            <img src="img/spodnie_szary.jpg" alt="Spodnie szare" onclick="openPreview(this)">
+            <h3>Szare spodnie</h3>
+            <p>159 zł</p>
+        </div>
+        <div class="product-card">
+            <img src="img/spodnie_bezowe.jpg" alt="Spodnie beżowe" onclick="openPreview(this)">
+            <h3>Beżowe lniane spodnie</h3>
+            <p>169 zł</p>
+        </div>
+        <div class="product-card">
+            <img src="img/kurtka.jpg" alt="Kurtka" onclick="openPreview(this)">
+            <h3>Kurtka casual</h3>
+            <p>199 zł</p>
+        </div>
+    </div>
+    <div id="popup" class="popup" onclick="closePreview()">
+        <img id="popup-img" src="" alt="Podgląd stylu">
+    </div>
+</section>
+
+<style>
+.lookbook-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.product-card {
+    text-align: center;
+    max-width: 180px;
+}
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.product-card img:hover {
+    transform: scale(1.05);
+}
+.product-card h3 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1rem;
+}
+.product-card p {
+    margin: 0;
+    font-weight: bold;
+    color: #5a3e36;
+}
+</style>
+
+
+        <section id="kontakt" class="kontakt">
+            <h2>Kontakt</h2>
+            <p>Masz pytania? Chcesz coś zamówić? Napisz do nas: <a href="mailto:kontakt@godsent.pl">kontakt@godsent.pl</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Godsent – zrobione przez studentów, z myślą o Tobie.</p>
+    </footer>
+
+    <script>
+    function openPreview(img) {
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popup-img');
+        popupImg.src = img.src;
+        popup.style.display = 'flex';
+    }
+    function closePreview() {
+        document.getElementById('popup').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
