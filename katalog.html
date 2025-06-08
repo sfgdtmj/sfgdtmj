@@ -6,11 +6,29 @@
     <title>Godsent</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Reset stylów domyślnych */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
         header {
             background-color: #5a3e36;
             color: #f3eee7;
             padding: 0.5rem;
             text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
         nav ul {
@@ -26,39 +44,28 @@
             color: #f3eee7;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+        main {
+            padding: 2rem 1rem;
+            padding-bottom: 4rem; /* Zabezpieczenie przed zakrytą treścią */
+        }
+
+        .katalog {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .categories {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .category {
+            background-color: #ddd;
+            padding: 1rem 2rem;
+            border-radius: 5px;
         }
 
         footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #3e2a23;
-            color: #f3eee7;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-<header>
-    <div class="logo">Godsent</div>
-</header>
-<main>
-    <section class="katalog">
-        <h2>Katalog</h2>
-        <div class="categories">
-            <div class="category">Mężczyzna</div>
-            <div class="category">Kobieta</div>
-            <div class="category">Komfortowy styl</div>
-        </div>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
-</footer>
-</body>
-</html>
+            text-a
