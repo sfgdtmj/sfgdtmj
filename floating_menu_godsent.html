@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godsent Floating Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        .menu-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5a3e36;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            flex-direction: column;
+            min-width: 160px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-content.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .menu-content a:hover {
+            background-color: #f0e6e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Witamy na stronie Godsent</h1>
+    <p>Test wersji z pływającym przyciskiem menu (kliknij ☰ w prawym dolnym rogu).</p>
+
+    <div class="menu-float" id="menuButton">
+        ☰
+        <div id="menuContent" class="menu-content">
+            <a href="index.html">Strona główna</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="onas.html">O nas</a>
+            <a href="historia.html">Historia</a>
+            <a href="lookbook.html">Lookbook</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menuButton");
+        const menuContent = document.getElementById("menuContent");
+
+        menuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuContent.classList.toggle("visible");
+        });
+
+        document.addEventListener("click", function () {
+            menuContent.classList.remove("visible");
+        });
+
+        menuContent.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
+    </script>
+</body>
+</html>
