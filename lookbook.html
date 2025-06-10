@@ -1,43 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Godsent</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        header {
+            background-color: #5a3e36;
+            color: #f3eee7;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f3eee7;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #3e2a23;
+            color: #f3eee7;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+.menu-float {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #8d6a60;
+            color: #f3eee7;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .menu-content {
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            flex-direction: column;
+            min-width: 160px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-content.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 5px 5px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .menu-content a:hover {
+            background-color: #f0e6e0;
+        }
+        .logo {
+            width: 200px;
+            position: middle;
+            border-top: 1rem;
+    </style>
 </head>
 <body>
 <header>
-    <div class="logo">Godsent</div>
-    <nav>
-        <ul>
-            <li><a href="katalog.html">Katalog</a></li>
-            <li><a href="onas.html">O nas</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="lookbook.html">Lookbook</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li class="cart-icon">🛒</li>
-        </ul>
-    </nav>
-</header>
+        <img src="img/GODSENT.jpg" class="logo">
+    </header>
 <main>
-
-<section class="lookbook">
-<h2>Lookbook</h2>
-<p>Przykłady naszych ciuchów na realnych osobach (wiesz, takich jak my i ty).</p>
-<div class="lookbook-gallery">
-    <div class="product-card"><img src="img/t-shirt.jpg" alt="T-shirt"><h3>T-shirt oversize</h3><p>99 zł</p></div>
-    <div class="product-card"><img src="img/koszula.jpg" alt="Koszula"><h3>Koszula letnia</h3><p>139 zł</p></div>
-    <div class="product-card"><img src="img/spodnie_szary.jpg" alt="Szare spodnie"><h3>Szare spodnie</h3><p>159 zł</p></div>
-    <div class="product-card"><img src="img/spodnie_bezowe.jpg" alt="Beżowe spodnie"><h3>Beżowe lniane spodnie</h3><p>169 zł</p></div>
-    <div class="product-card"><img src="img/kurtka.jpg" alt="Kurtka"><h3>Kurtka casual</h3><p>199 zł</p></div>
-</div>
-</section>
-
+    <section class="katalog">
+        <h2>Katalog</h2>
+        <div class="categories">
+            <div class="category">Mężczyzna</div>
+            <div class="category">Kobieta</div>
+            <div class="category">Komfortowy styl</div>
+        </div>
+    </section>
 </main>
+    <div class="menu-float" id="menuButton">
+        ☰
+        <div id="menuContent" class="menu-content">
+            <a href="index.html">🏠 Strona główna</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="onas.html">O nas</a>
+            <a href="historia.html">Historia</a>
+            <a href="lookbook.html">Lookbook</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menuButton");
+        const menuContent = document.getElementById("menuContent");
+
+        menuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuContent.classList.toggle("visible");
+        });
+
+        document.addEventListener("click", function () {
+            menuContent.classList.remove("visible");
+        });
+
+        menuContent.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
+    </script>
 <footer>
-    <p>&copy; 2025 Godsent – zrobione przez studentów, z myślą o Tobie.</p>
+    <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
 </footer>
 </body>
 </html>
