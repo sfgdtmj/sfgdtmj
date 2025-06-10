@@ -112,6 +112,37 @@
         </div>
     </section>
 </main>
+    <div class="menu-float" id="menuButton">
+        ☰
+        <div id="menuContent" class="menu-content">
+            <a href="index.html">🏠 Strona główna</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="onas.html">O nas</a>
+            <a href="historia.html">Historia</a>
+            <a href="lookbook.html">Lookbook</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menuButton");
+        const menuContent = document.getElementById("menuContent");
+
+        menuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuContent.classList.toggle("visible");
+        });
+
+        document.addEventListener("click", function () {
+            menuContent.classList.remove("visible");
+        });
+
+        menuContent.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
+    </script>
 <footer>
     <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
 </footer>
