@@ -9,7 +9,7 @@
         header {
             background-color: #5a3e36;
             color: #f3eee7;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
         }
 
@@ -26,11 +26,6 @@
             color: #f3eee7;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
         footer {
             text-align: center;
             padding: 1rem;
@@ -40,7 +35,8 @@
             bottom: 0;
             width: 100%;
         }
-.menu-float {
+
+        .menu-float {
             position: fixed;
             bottom: 70px;
             right: 20px;
@@ -91,30 +87,73 @@
         .menu-content a:hover {
             background-color: #f0e6e0;
         }
+
         .logo {
-            width: 200px;
-            border-top: 1rem;
+            max-width: 200px;
+            height: auto;
+            float: right;
+        }
+
+        h1 {
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column; 
+            align-items: left;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .kategoria {    
+            border: 2px solid #8d6a60;      
+            background-color: #fdfaf7;        
+            color: #3e2a23;
+            padding: 1rem 1rem;               
+            border-radius: 8px;           
+            font-size: 1rem;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+            }
+
+        .kategoria:hover {
+             transform: translateY(-3px);
+             border-color: #a5837a;
+            }
     </style>
 </head>
 <body>
-<header>
-        <img src="img/GODSENT.jpg" class="logo">
+    <header>
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent">
+        <h1>PROMOCJE</h1>
     </header>
-<main>
-    <section class="lookbook">
-        <h2>Lookbook</h2>
-        <div class="Lookbook">
-        </div>
-    </section>
-</main>
-    <div class="menu-float" id="menuButton">
+
+    <main>
+        <section class="katalog">
+            <h2>Kategorie</h2>
+            <div class="categories">
+                <div class="kategoria">KOBIETA</div>
+                <div class="kategoria">MĘŻCZYZNA</div>
+                <div class="kategoria">DZIECKO</div>
+            </div>
+        </section>
+    </main>
+
+    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
         ☰
         <div id="menuContent" class="menu-content">
             <a href="index.html">🏠 Strona główna</a>
-            <a href="katalog.html">Katalog</a>
-            <a href="onas.html">O nas</a>
-            <a href="historia.html">Historia</a>
-            <a href="lookbook.html">Lookbook</a>
+            <a href="katalog.html">Kobieta</a>
+            <a href="onas.html">Mężczyzna</a>
+            <a href="historia.html">Dziecko</a>
+            <a href="lookbook.html">Promocje</a>
             <a href="kontakt.html">Kontakt</a>
         </div>
     </div>
@@ -138,8 +177,9 @@
         });
     });
     </script>
-<footer>
-    <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
-</footer>
+
+    <footer>
+        <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
+    </footer>
 </body>
 </html>
