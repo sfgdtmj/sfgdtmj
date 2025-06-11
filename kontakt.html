@@ -9,8 +9,21 @@
         header {
             background-color: #5a3e36;
             color: #f3eee7;
-            padding: 1rem;
-            text-align: center;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
         }
 
         nav ul {
@@ -87,43 +100,57 @@
         .menu-content a:hover {
             background-color: #f0e6e0;
         }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PROMOCJE</h1>
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent">
+    </header>
 
-        .logo {
-            max-width: 200px;
-            height: auto;
-            float: right;
-        }
+    <main>
+        <section class="kontakt">
+            <h2>Kontakt</h2>
+            <p>Masz pytania? Chcesz coś zamówić? Napisz do nas: 
+                <a href="mailto:kontakt@godsent.pl">kontakt@godsent.pl</a>
+            </p>
+        </section>
+    </main>
 
-        h1 {
-            font-size: 1rem;
-            font-family: 'Arial', sans-serif;
-        }
-</style>
+    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
+        ☰
+        <div id="menuContent" class="menu-content">
+            <a href="index.html">🏠 Strona główna</a>
+            <a href="katalog.html">Kobieta</a>
+            <a href="onas.html">Mężczyzna</a>
+            <a href="historia.html">Dziecko</a>
+            <a href="lookbook.html">Promocje</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
 
-<body> 
-    <header> 
-        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent"> 
-        <h1>KONTAKT</h1> 
-    </header> 
-<main>
-        <div class="menu-float" id="menuButton" aria-label="Otwórz menu"> 
+    <footer>
+        <p>&copy; 2025 Godsent – zrobione przez studentów, z myślą o Tobie.</p>
+    </footer>
 
-        ☰ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuButton");
+            const menuContent = document.getElementById("menuContent");
 
-        <div id="menuContent" class="menu-content"> 
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                menuContent.classList.toggle("visible");
+            });
 
-            <a href="index.html">🏠 Strona główna</a> 
-            <a href="katalog.html">Kobieta</a> 
-            <a href="onas.html">Mężczyzna</a> 
-            <a href="historia.html">Dziecko</a> 
-            <a href="lookbook.html">Promocje</a> 
-            <a href="kontakt.html">Kontakt</a> 
+            document.addEventListener("click", function () {
+                menuContent.classList.remove("visible");
+            });
 
-        </div> 
-<section class='kontakt'><h2>Kontakt</h2><p>Masz pytania? Chcesz coś zamówić? Napisz do nas: <a href='mailto:kontakt@godsent.pl'>kontakt@godsent.pl</a></p></section>
-</main>
-<footer>
-    <p>&copy; 2025 Godsent – zrobione przez studentów, z myślą o Tobie.</p>
-</footer>
+            menuContent.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 </html>
