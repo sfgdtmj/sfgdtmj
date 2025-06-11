@@ -25,7 +25,7 @@
             text-decoration: none;
             color: #f3eee7;
         }
-        
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -35,7 +35,8 @@
             bottom: 0;
             width: 100%;
         }
-.menu-float {
+
+        .menu-float {
             position: fixed;
             bottom: 70px;
             right: 20px;
@@ -86,35 +87,61 @@
         .menu-content a:hover {
             background-color: #f0e6e0;
         }
+
         .logo {
             max-width: 150px;
             height: auto;
+            float: right;
         }
+
         h1 {
             font-size: 0.5rem;
         }
 
-        .ubrania {
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .kategoria {
+            background-color: #8d6a60;
+            color: #f3eee7;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .kategoria:hover {
+            background-color: #a5837a;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-<header>
-        <img src="img/GODSENT.jpg" class="logo">
+    <header>
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent">
         <h1>Kobieta</h1>
     </header>
-<main>
-    <section class="katalog">
-        <h2>Kategorie</h2>
-        <div class="categories">
-            <div class="kategorie">Ubrania</div>
-            <div class="kategorie">Obuwie</div>
-            <div class="kategorie">Dodatki</div>
-        </div>
-    </section>
-</main>
-    <div class="menu-float" id="menuButton">
+
+    <main>
+        <section class="katalog">
+            <h2>Kategorie</h2>
+            <div class="categories">
+                <div class="kategoria">Ubrania</div>
+                <div class="kategoria">Obuwie</div>
+                <div class="kategoria">Dodatki</div>
+            </div>
+        </section>
+    </main>
+
+    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
         ☰
         <div id="menuContent" class="menu-content">
             <a href="index.html">🏠 Strona główna</a>
@@ -145,8 +172,9 @@
         });
     });
     </script>
-<footer>
-    <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
-</footer>
+
+    <footer>
+        <p>&copy; 2025 Godsent – stworzone przez studentów.</p>
+    </footer>
 </body>
 </html>
