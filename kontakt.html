@@ -1,27 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Godsent</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <div class="logo">Godsent</div>
-    <nav>
-        <ul>
-            <li><a href="katalog.html">Katalog</a></li>
-            <li><a href="onas.html">O nas</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="lookbook.html">Lookbook</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li class="cart-icon">🛒</li>
-        </ul>
-    </nav>
-</header>
+    <style>
+        header {
+            background-color: #5a3e36;
+            color: #f3eee7;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f3eee7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #3e2a23;
+            color: #f3eee7;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .menu-float {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #8d6a60;
+            color: #f3eee7;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .menu-content {
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            flex-direction: column;
+            min-width: 160px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-content.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 5px 5px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .menu-content a:hover {
+            background-color: #f0e6e0;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            float: right;
+        }
+
+        h1 {
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+        }
+</style>
+
+<body> 
+    <header> 
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent"> 
+        <h1>KONTAKT</h1> 
+    </header> 
 <main>
+        <div class="menu-float" id="menuButton" aria-label="Otwórz menu"> 
+
+        ☰ 
+
+        <div id="menuContent" class="menu-content"> 
+
+            <a href="index.html">🏠 Strona główna</a> 
+            <a href="katalog.html">Kobieta</a> 
+            <a href="onas.html">Mężczyzna</a> 
+            <a href="historia.html">Dziecko</a> 
+            <a href="lookbook.html">Promocje</a> 
+            <a href="kontakt.html">Kontakt</a> 
+
+        </div> 
 <section class='kontakt'><h2>Kontakt</h2><p>Masz pytania? Chcesz coś zamówić? Napisz do nas: <a href='mailto:kontakt@godsent.pl'>kontakt@godsent.pl</a></p></section>
 </main>
 <footer>
