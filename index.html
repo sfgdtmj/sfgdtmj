@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GODSENT – Strona główna</title>
     <style>
+        /* Reset stylów marginesów i paddingów */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding-bottom: 100px;
             background-color: #f3eee7;
             color: #3e2a23;
+            line-height: 1.6;
+            padding-bottom: 100px;
         }
 
         header {
             background-color: #5a3e36;
             color: #f3eee7;
-            padding: 0.5rem;
+            padding: 1rem;
             text-align: center;
-            font-family: 'verdana', sans-serif;
         }
 
         main {
@@ -28,13 +34,20 @@
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 5rem;
+            margin-bottom: 1rem;
         }
 
         p {
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 90%;
             margin: 0 auto;
+        }
+
+        .logo {
+            max-width: 80%;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
         }
 
         footer {
@@ -67,11 +80,11 @@
         .menu-content {
             display: none;
             position: fixed;
-            bottom: 50px;
+            bottom: 130px;
             right: 20px;
             background-color: #fff;
             color: #333;
-            border-radius: 4px;
+            border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             flex-direction: column;
             min-width: 160px;
@@ -88,7 +101,7 @@
 
         .menu-content a {
             display: block;
-            padding: 10px 15px;
+            padding: 12px 16px;
             text-decoration: none;
             color: #333;
             border-bottom: 1px solid #eee;
@@ -98,21 +111,43 @@
         .menu-content a:hover {
             background-color: #f0e6e0;
         }
-        h1 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .menu-content {
+                right: 10px;
+                bottom: 120px;
+                min-width: 90%;
+                max-width: 300px;
+            }
+
+            .logo {
+                max-width: 100%;
+            }
         }
-        .logo {
-            max-width: 270px;
-            height: auto;
-            margin-bottom: 1rem;
+
+        @media (max-width: 480px) {
+            .menu-float {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+                line-height: 45px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Witamy w</h1>
-        <img src="img/GODSENT.jpg" class="logo">
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo GODSENT">
     </header>
 
     <main>
@@ -123,7 +158,7 @@
         &copy; 2025 Godsent – stworzone przez studentów.
     </footer>
 
-    <div class="menu-float" id="menuButton">
+    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
         ☰
         <div id="menuContent" class="menu-content">
             <a href="index.html">🏠 Strona główna</a>
@@ -136,23 +171,23 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuBtn = document.getElementById("menuButton");
-        const menuContent = document.getElementById("menuContent");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuButton");
+            const menuContent = document.getElementById("menuContent");
 
-        menuBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            menuContent.classList.toggle("visible");
-        });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                menuContent.classList.toggle("visible");
+            });
 
-        document.addEventListener("click", function () {
-            menuContent.classList.remove("visible");
-        });
+            document.addEventListener("click", function () {
+                menuContent.classList.remove("visible");
+            });
 
-        menuContent.addEventListener("click", function (e) {
-            e.stopPropagation();
+            menuContent.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
         });
-    });
     </script>
 </body>
 </html>
