@@ -106,24 +106,25 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 1rem;
-}
         }
-
-        .kategoria {
-            background-color: #8d6a60;
-            color: #f3eee7;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .kategoria {    
+            border: 2px solid #8d6a60;      
+            background-color: #fdfaf7;        
+            color: #3e2a23;
+            padding: 1rem 2rem;               
+            border-radius: 8px;           
+            font-size: 1rem;
             text-align: center;
-        }
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+}
 
-        .kategoria:hover {
-            background-color: #a5837a;
-            transform: translateY(-2px);
+.kategoria:hover {
+    transform: translateY(-3px);
+    border-color: #a5837a;
+}
         }
     </style>
 </head>
