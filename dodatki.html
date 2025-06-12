@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubrania damskie – Godsent</title>
+    <style>
+        header {
+            background-color: #5a3e36;
+            color: #f3eee7;
+            padding: 1.5rem;
+            text-align: center;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfaf7;
+            color: #3e2a23;
+            padding-bottom: 80px; /* zapobiega zasłonięciu treści przez stopkę */
+        }
+
+        .produkty {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        .produkt {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .produkt img {
+            max-width: 100%;
+            border-radius: 4px;
+            height: auto;
+        }
+
+        .cena {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: #5a3e36;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #3e2a23;
+            color: #f3eee7;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .menu-float {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #8d6a60;
+            color: #f3eee7;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .menu-content {
+            display: none;
+            position: fixed;
+            bottom: 130px;
+            right: 20px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            flex-direction: column;
+            min-width: 160px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .menu-content.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 15px 20px;   
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;  
+            border-radius: 8px;   
+            margin-bottom: 8px;  
+            text-align: center;
+}
+
+        .menu-content a:hover {
+            background-color: #f0e6e0;
+            color: #5a3e36;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 0.8rem;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            line-height: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent">
+        <h1>UBRANIA DAMSKIE</h1>
+    </header>
+
+    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">☰</div>
+    <div id="menuContent" class="menu-content">
+        <a href="index.html">🏠 Strona główna</a>
+        <a href="katalog.html">Kobieta</a>
+        <a href="onas.html">Mężczyzna</a>
+        <a href="historia.html">Dziecko</a>
+        <a href="lookbook.html">Promocje</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+
+    <section class="produkty">
+        <div class="produkt">
+            <img src="img/koszulkadamska.jpg" alt="Bluzka damska">
+            <div class="cena">89,99 zł</div>
+        </div>
+        <div class="produkt">
+            <img src="img/zielonasukienka.jpg" alt="Zielona sukienka">
+            <div class="cena">189 zł</div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Godsent – stworzone przez studentów.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuButton");
+            const menuContent = document.getElementById("menuContent");
+
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                menuContent.classList.toggle("visible");
+            });
+
+            document.addEventListener("click", function () {
+                menuContent.classList.remove("visible");
+            });
+
+            menuContent.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+</body>
+</html>
