@@ -11,6 +11,7 @@
             padding: 1rem;
             text-align: center;
         }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -29,7 +30,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem auto;
         }
 
         .produkt {
@@ -52,6 +53,7 @@
             font-weight: bold;
             color: #5a3e36;
         }
+
         footer {
             text-align: center;
             padding: 1rem;
@@ -119,7 +121,6 @@
             height: auto;
             float: right;
         }
-
     </style>
 </head>
 <body>
@@ -127,31 +128,56 @@
     <header>
         <img src="img/GODSENT.jpg" class="logo" alt="Logo Godsent">
     </header>
-    
-<div class="menu-float" id="menuButton" aria-label="Otwórz menu">
-        ☰
-        <div id="menuContent" class="menu-content">
-            <a href="index.html">🏠 Strona główna</a>
-            <a href="katalog.html">Kobieta</a>
-            <a href="onas.html">Mężczyzna</a>
-            <a href="historia.html">Dziecko</a>
-            <a href="lookbook.html">Promocje</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
 
-    <section class="produkty">
-        <div class="produkt">
-            <img src="img/koszulkadamska.jpg" alt="Bluzka damska">
-            <div class="cena">89,99zł</div>
+
+        <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
+            ☰
         </div>
-        <div class="produkt">
-            <img src="img/zielonasukienka.jpg" alt="Sukienka">
-            <div class="cena">189 zł</div>
-        </div>
-        </div>
-      
-    </section>
+            <div id="menuContent" class="menu-content">
+                <a href="index.html">🏠 Strona główna</a>
+                <a href="katalog.html">Kobieta</a>
+                <a href="onas.html">Mężczyzna</a>
+                <a href="historia.html">Dziecko</a>
+                <a href="lookbook.html">Promocje</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+
+<section class="produkty">
+    <div class="produkt">
+        <img src="img/koszulkadamska.jpg" alt="Bluzka damska">
+        <div class="cena">89,99 zł</div>
+    </div>
+    <div class="produkt">
+        <img src="img/zielonasukienka.jpg" alt="Zielona sukienka">
+        <div class="cena">189 zł</div>
+    </div>
+
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menuButton");
+        const menuContent = document.getElementById("menuContent");
+
+        menuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuContent.classList.toggle("visible");
+        });
+
+        document.addEventListener("click", function () {
+            menuContent.classList.remove("visible");
+        });
+
+        menuContent.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+
+<footer>
+    &copy; 2025 Godsent – stworzone przez studentów.
+</footer>
 
 </body>
 </html>
-
