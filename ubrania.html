@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubrania – Godsent</title>
     <style>
-        header {
+        header::after {
+            content: "";
+            display: block;
+            clear: both;
             background-color: #5a3e36;
             color: #f3eee7;
             padding: 1rem;
@@ -54,15 +57,14 @@
             color: #5a3e36;
         }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #3e2a23;
-            color: #f3eee7;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+          footer {
+                text-align: center;
+                padding: 1rem;
+                background-color: #3e2a23;
+                color: #f3eee7;
+                position: relative;
+                margin-top: 3rem;
+          }
 
         .menu-float {
             position: fixed;
