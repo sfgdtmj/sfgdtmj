@@ -1,195 +1,208 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GODSENT – Strona główna</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GODSENT – Strona główna</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f3eee7;
-            color: #3e2a23;
-            line-height: 1.6;
-            padding-bottom: 100px;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3eee7;
+      color: #3e2a23;
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
 
-        header {
-            background-color: #5a3e36;
-            color: #f3eee7;
-            padding: 0.5rem;
-            text-align: center;
-        }
+    header {
+      background-color: #5a3e36;
+      color: #f3eee7;
+      padding: 0.5rem;
+      text-align: center;
+    }
 
-        main {
-            padding: 1rem;
-            text-align: center;
-        }
+    main {
+      padding: 1rem;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-        p {
-            font-size: 1.2rem;
-            max-width: 90%;
-            margin: 0 auto;
-        }
+    p {
+      font-size: 1.2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
-        .logo {
-            max-width: 60%;
-            height: auto;
-            margin: 1rem auto;
-            display: block;
-        }
+    .logo {
+      max-width: 60%;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #3e2a23;
-            color: #f3eee7;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+    .main-image {
+      max-width: 50%;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
 
-        .menu-float {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            background-color: #8d6a60;
-            color: #f3eee7;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 1000;
-            user-select: none;
-        }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #3e2a23;
+      color: #f3eee7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
-        .menu-content {
-            display: none;
-            position: fixed;
-            bottom: 50px;
-            right: 20px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            flex-direction: column;
-            min-width: 160px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
+    .menu-float {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background-color: #8d6a60;
+      color: #f3eee7;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      z-index: 1000;
+      user-select: none;
+    }
 
-        .menu-content.visible {
-            display: flex;
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .menu-content {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      flex-direction: column;
+      min-width: 160px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
 
-        .menu-content a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-        }
+    .menu-content.visible {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .menu-content a:hover {
-            background-color: #f0e6e0;
-        }
+    .menu-content a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5rem;
-            }
+    .menu-content a:hover {
+      background-color: #f0e6e0;
+    }
 
-            p {
-                font-size: 1rem;
-            }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
 
-            .menu-content {
-                right: 10px;
-                bottom: 120px;
-                min-width: 160px;
-                max-width: 200px;
-            }
+      p {
+        font-size: 1rem;
+      }
 
-            .logo {
-                max-width: 80%;
-            }
-        }
+      .menu-content {
+        right: 10px;
+        bottom: 120px;
+        min-width: 160px;
+        max-width: 200px;
+      }
 
-        @media (max-width: 480px) {
-            .menu-float {
-                width: 45px;
-                height: 45px;
-                font-size: 22px;
-                line-height: 45px;
-            }
-        }
-    </style>
+      .logo {
+        max-width: 80%;
+      }
+
+      .main-image {
+        max-width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu-float {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        line-height: 45px;
+      }
+
+      .main-image {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Witamy w GODSENT</h1>
-        <img src="img/GODSENT.jpg" class="logo" alt="Logo GODSENT">
-    </header>
+  <header>
+    <h1>Witamy w GODSENT</h1>
+    <img src="img/GODSENT.jpg" class="logo" alt="Logo GODSENT" />
+  </header>
 
-    <main>
-        <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej. Styl studentów, pasja i kawa w jednym.</p>
-        <div>
-            <img src="img/spodnica.jpg" alt="Spódnica GODSENT">
-        </div>
-    </main>
+  <main>
+    <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej. Styl studentów, pasja i kawa w jednym.</p>
+    <img src="img/spodnica.jpg" alt="Spódnica GODSENT" class="main-image" />
+  </main>
 
-    <footer>
-        &copy; 2025 Godsent – stworzone przez studentów.
-    </footer>
+  <footer>
+    &copy; 2025 Godsent – stworzone przez studentów.
+  </footer>
 
-    <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
-        ☰
-    </div>
+  <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
+    ☰
+  </div>
 
-    <nav id="menuContent" class="menu-content" aria-label="Menu główne">
-        <a href="index.html">🏠 Strona główna</a>
-        <a href="katalog.html">Kobieta</a>
-        <a href="onas.html">Mężczyzna</a>
-        <a href="historia.html">Dziecko</a>
-        <a href="lookbook.html">Promocje</a>
-        <a href="kontakt.html">Kontakt</a>
-    </nav>
+  <nav id="menuContent" class="menu-content" aria-label="Menu główne">
+    <a href="index.html">🏠 Strona główna</a>
+    <a href="katalog.html">Kobieta</a>
+    <a href="onas.html">Mężczyzna</a>
+    <a href="historia.html">Dziecko</a>
+    <a href="lookbook.html">Promocje</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuBtn = document.getElementById("menuButton");
-            const menuContent = document.getElementById("menuContent");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuButton");
+      const menuContent = document.getElementById("menuContent");
 
-            menuBtn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                menuContent.classList.toggle("visible");
-            });
+      menuBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menuContent.classList.toggle("visible");
+      });
 
-            document.addEventListener("click", function () {
-                menuContent.classList.remove("visible");
-            });
+      document.addEventListener("click", function () {
+        menuContent.classList.remove("visible");
+      });
 
-            menuContent.addEventListener("click", function (e) {
-                e.stopPropagation();
-            });
-        });
-    </script>
+      menuContent.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </body>
 </html>
