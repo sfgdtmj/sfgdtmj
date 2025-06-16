@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GODSENT – Strona główna</title>
     <style>
-       
         * {
             box-sizing: border-box;
             margin: 0;
@@ -120,8 +119,9 @@
             p {
                 font-size: 1rem;
             }
-        .menu-content {
-                 right: 10px;
+
+            .menu-content {
+                right: 10px;
                 bottom: 120px;
                 min-width: 160px;
                 max-width: 200px;
@@ -139,18 +139,19 @@
                 font-size: 22px;
                 line-height: 45px;
             }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Witamy w</h1>
+        <h1>Witamy w GODSENT</h1>
         <img src="img/GODSENT.jpg" class="logo" alt="Logo GODSENT">
     </header>
 
     <main>
         <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej. Styl studentów, pasja i kawa w jednym.</p>
         <div>
-            <img src="img/spodnica.jpg" alt="T">
+            <img src="img/spodnica.jpg" alt="Spódnica GODSENT">
         </div>
     </main>
 
@@ -160,15 +161,16 @@
 
     <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
         ☰
-        <div id="menuContent" class="menu-content">
-            <a href="index.html">🏠 Strona główna</a>
-            <a href="katalog.html">Kobieta</a>
-            <a href="onas.html">Mężczyzna</a>
-            <a href="historia.html">Dziecko</a>
-            <a href="lookbook.html">Promocje</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
     </div>
+
+    <nav id="menuContent" class="menu-content" aria-label="Menu główne">
+        <a href="index.html">🏠 Strona główna</a>
+        <a href="katalog.html">Kobieta</a>
+        <a href="onas.html">Mężczyzna</a>
+        <a href="historia.html">Dziecko</a>
+        <a href="lookbook.html">Promocje</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
