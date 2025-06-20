@@ -53,36 +53,60 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
       margin-top: 2rem;
-      perspective: 1000px;
+      position: relative;
     }
 
     .fan-image {
-      width: 180px;
+      width: 200px;
       height: auto;
-      border: 2px solid #ddd;
+      border: 2px solid #ccc;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      position: relative;
+      margin-left: -60px;
+      z-index: 1;
     }
 
     .fan-image:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 10;
     }
 
-    .rotate-1 {
-      transform: rotate(-10deg);
+    .fan-container .fan-image:first-child {
+      margin-left: 0;
     }
 
-    .rotate-2 {
-      transform: rotate(0deg);
+    .rotate-1 { transform: rotate(-10deg); }
+    .rotate-2 { transform: rotate(0deg); }
+    .rotate-3 { transform: rotate(10deg); }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
     }
 
-    .rotate-3 {
-      transform: rotate(10deg);
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .modal:target {
+      display: block;
     }
 
     footer {
@@ -161,7 +185,8 @@
       }
 
       .fan-image {
-        width: 140px;
+        width: 150px;
+        margin-left: -40px;
       }
     }
 
@@ -175,37 +200,8 @@
 
       .fan-image {
         width: 120px;
+        margin-left: -30px;
       }
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.85);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -217,12 +213,24 @@
 
   <main>
     <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej.</p>
+
     <div class="fan-container">
-      <img src="img/spodnie_bezowe.jpg" class="fan-image rotate-1" alt="Spodnie beżowe">
-      <img src="img/spodnica.jpg" class="fan-image rotate-2" alt="Spódnica">
-      <img src="img/okulary.jpg" class="fan-image rotate-3" alt="Okulary">
+      <a href="#modal1"><img src="img/spodnie_bezowe.jpg" class="fan-image rotate-1" alt="Spodnie beżowe"></a>
+      <a href="#modal2"><img src="img/spodnica.jpg" class="fan-image rotate-2" alt="Spódnica"></a>
+      <a href="#modal3"><img src="img/okulary.jpg" class="fan-image rotate-3" alt="Okulary"></a>
     </div>
   </main>
+
+  <!-- MODALE -->
+  <div id="modal1" class="modal">
+    <a href="#"><img src="img/spodnie_bezowe.jpg" class="modal-content" alt="Spodnie beżowe"></a>
+  </div>
+  <div id="modal2" class="modal">
+    <a href="#"><img src="img/spodnica.jpg" class="modal-content" alt="Spódnica"></a>
+  </div>
+  <div id="modal3" class="modal">
+    <a href="#"><img src="img/okulary.jpg" class="modal-content" alt="Okulary"></a>
+  </div>
 
   <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
     ☰
@@ -239,11 +247,6 @@
   <footer>
     &copy; 2025 Godsent – stworzone przez studentów.
   </footer>
-
-  <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg">
-  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -262,27 +265,6 @@
       menuContent.addEventListener("click", function (e) {
         e.stopPropagation();
       });
-
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImg");
-      const closeBtn = document.querySelector(".close");
-
-      document.querySelectorAll('.fan-image').forEach(img => {
-        img.addEventListener('click', function () {
-          modal.style.display = "block";
-          modalImg.src = this.src;
-        });
-      });
-
-      closeBtn.onclick = function () {
-        modal.style.display = "none";
-      };
-
-      window.onclick = function (event) {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      };
     });
   </script>
 </body>
