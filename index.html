@@ -72,70 +72,100 @@
     }
 
     .menu-float {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            background-color: #8d6a60;
-            color: #f3eee7;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 1000;
-            user-select: none;
-        }
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background-color: #8d6a60;
+      color: #f3eee7;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      z-index: 1000;
+      user-select: none;
+    }
 
-        .menu-content {
-            display: none;
-            position: fixed;
-            bottom: 50px;
-            right: 20px;
-            background-color: #fff;
-            color: #333;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            flex-direction: column;
-            min-width: 160px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
+    .menu-content {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      flex-direction: column;
+      min-width: 160px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
 
-        .menu-content.visible {
-            display: flex;
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .menu-content.visible {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .menu-content a {
-            display: block;
-            padding: 5px 5px;
-            text-decoration: none;
-            color: #333;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-        }
+    .menu-content a {
+      display: block;
+      padding: 5px 5px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
 
-        .menu-content a:hover {
-            background-color: #f0e6e0;
-        }
+    .menu-content a:hover {
+      background-color: #f0e6e0;
+    }
+
+    .fan-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 2rem auto;
+    }
+
+    .fan-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: auto;
+      transform-origin: bottom center;
+      transition: transform 0.3s ease, z-index 0.3s ease;
+    }
+    .rotate-1 {
+      transform: translate(-50%, -50%) rotate(-20deg);
+      z-index: 1;
+    }
+    .rotate-2 {
+      transform: translate(-50%, -50%) rotate(0deg);
+      z-index: 2;
+    }
+    .rotate-3 {
+      transform: translate(-50%, -50%) rotate(20deg);
+      z-index: 1;
+    }
+    .fan-image:hover {
+      transform: translate(-50%, -50%) scale(1.05) rotate(0deg);
+      z-index: 3;
+    }
 
     @media (max-width: 768px) {
       h1 {
         font-size: 1.5rem;
       }
-
       p {
         font-size: 1rem;
       }
-
       .logo {
         max-width: 80%;
       }
-
       .main-image {
         max-width: 80%;
       }
@@ -163,11 +193,11 @@
 
   <main>
     <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej.</p>
-      <div class="fan-container">
-          <img src="img/spodnica.jpg" class="fan-image rotate-1" alt="Zdjęcie 1">
-          <img src="img/spodnie_bezowe.jpg" class="fan-image rotate-2" alt="Zdjęcie 2">
-          <img src="img/okulary.jpg" class="fan-image rotate-3" alt="Zdjęcie 3">
-      </div>
+    <div class="fan-container">
+      <img src="img/spodnica.jpg" class="fan-image rotate-1" alt="Zdjęcie 1">
+      <img src="img/spodnie_bezowe.jpg" class="fan-image rotate-2" alt="Zdjęcie 2">
+      <img src="img/okulary.jpg" class="fan-image rotate-3" alt="Zdjęcie 3">
+    </div>
   </main>
 
   <div class="menu-float" id="menuButton" aria-label="Otwórz menu">
@@ -187,23 +217,23 @@
   </footer>
 
   <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuBtn = document.getElementById("menuButton");
-            const menuContent = document.getElementById("menuContent");
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.getElementById("menuButton");
+      const menuContent = document.getElementById("menuContent");
 
-            menuBtn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                menuContent.classList.toggle("visible");
-            });
+      menuBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menuContent.classList.toggle("visible");
+      });
 
-            document.addEventListener("click", function () {
-                menuContent.classList.remove("visible");
-            });
+      document.addEventListener("click", function () {
+        menuContent.classList.remove("visible");
+      });
 
-            menuContent.addEventListener("click", function (e) {
-                e.stopPropagation();
-            });
-        });
-    </script>
+      menuContent.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
 </body>
 </html>
