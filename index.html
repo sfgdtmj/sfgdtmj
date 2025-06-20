@@ -39,7 +39,7 @@
     p {
       font-size: 1.2rem;
       max-width: 90%;
-      margin: 0 auto;
+      margin: 0 auto 2rem auto;
     }
 
     .logo {
@@ -47,80 +47,6 @@
       height: auto;
       margin: 1rem auto;
       display: block;
-    }
-
-    .main-image {
-      max-width: 50%;
-      height: auto;
-      margin: 1rem auto;
-      display: block;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #3e2a23;
-      color: #f3eee7;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .menu-float {
-      position: fixed;
-      bottom: 70px;
-      right: 20px;
-      background-color: #8d6a60;
-      color: #f3eee7;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      text-align: center;
-      line-height: 50px;
-      cursor: pointer;
-      z-index: 1000;
-      user-select: none;
-    }
-
-    .menu-content {
-      display: none;
-      position: fixed;
-      bottom: 50px;
-      right: 20px;
-      background-color: #fff;
-      color: #333;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      flex-direction: column;
-      min-width: 160px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-    }
-
-    .menu-content.visible {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .menu-content a {
-      display: block;
-      padding: 5px 5px;
-      text-decoration: none;
-      color: #333;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
-
-    .menu-content a:hover {
-      background-color: #f0e6e0;
     }
 
     .fan-container {
@@ -134,30 +60,37 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 140px;
+      width: 160px;
       height: auto;
       transform-origin: bottom center;
       transition: transform 0.3s ease, z-index 0.3s ease;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff;
     }
 
     .rotate-1 {
-      transform: translate(-50%, -50%) rotate(-25deg);
+      transform: translate(-55%, -50%) rotate(-25deg);
       z-index: 1;
     }
 
     .rotate-2 {
       transform: translate(-50%, -50%) rotate(0deg);
-      z-index: 2;
+      z-index: 3;
     }
 
     .rotate-3 {
-      transform: translate(-50%, -50%) rotate(25deg);
+      transform: translate(-45%, -50%) rotate(25deg);
       z-index: 1;
     }
 
     .fan-image:hover {
       transform: translate(-50%, -50%) scale(1.05) rotate(0deg);
-      z-index: 3;
+      z-index: 10 !important;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-color: #999;
     }
 
     @media (max-width: 768px) {
@@ -172,53 +105,49 @@
       .logo {
         max-width: 80%;
       }
-
-      .main-image {
-        max-width: 80%;
-      }
     }
 
     @media (max-width: 480px) {
-      .menu-float {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-        line-height: 45px;
+      .fan-container {
+        width: 240px;
+        height: 160px;
       }
 
-      .main-image {
-        max-width: 90%;
+      .fan-image {
+        width: 120px;
       }
     }
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        padding-top: 60px;
-        left: 0; top: 0;
-        width: 100%; height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.85);
-      }
 
-      .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 90%;
-        max-height: 80vh;
-        border-radius: 8px;
-        box-shadow: 0 4px 20px rgba(255,255,255,0.2);
-      }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
 
-      .close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-      }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
@@ -230,9 +159,9 @@
   <main>
     <p>Ubrania, które wyglądają dobrze i czujesz się w nich jeszcze lepiej.</p>
     <div class="fan-container">
-      <img src="img/spodnie_bezowe.jpg" class="fan-image rotate-1" alt="Zdjęcie 1">
-      <img src="img/spodnica.jpg" class="fan-image rotate-2" alt="Zdjęcie 2">
-      <img src="img/okulary.jpg" class="fan-image rotate-3" alt="Zdjęcie 3">
+      <img src="img/spodnie_bezowe.jpg" class="fan-image rotate-1" alt="Spódnica">
+      <img src="img/spodnica.jpg" class="fan-image rotate-2" alt="Spodnie beżowe">
+      <img src="img/okulary.jpg" class="fan-image rotate-3" alt="Okulary">
     </div>
   </main>
 
@@ -252,6 +181,11 @@
     &copy; 2025 Godsent – stworzone przez studentów.
   </footer>
 
+  <div id="imageModal" class="modal" aria-hidden="true" role="dialog" aria-label="Powiększone zdjęcie">
+    <span class="close" role="button" aria-label="Zamknij modal">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Powiększone zdjęcie">
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const menuBtn = document.getElementById("menuButton");
@@ -269,31 +203,42 @@
       menuContent.addEventListener("click", function (e) {
         e.stopPropagation();
       });
-    });
+
       const modal = document.getElementById("imageModal");
       const modalImg = document.getElementById("modalImg");
       const closeBtn = document.querySelector(".close");
 
       document.querySelectorAll('.fan-image').forEach(img => {
-      img.addEventListener('click', function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
+        img.addEventListener('click', function () {
+          modal.style.display = "block";
+          modal.setAttribute('aria-hidden', 'false');
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+        });
+      });
+
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+      };
+
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          modal.setAttribute('aria-hidden', 'true');
+          modalImg.src = '';
+        }
+      };
+
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.style.display === "block") {
+          modal.style.display = "none";
+          modal.setAttribute('aria-hidden', 'true');
+          modalImg.src = '';
+        }
       });
     });
-
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-    };
-    window.onclick = function (event) {
-      if (event.target === modal) {
-      modal.style.display = "none";
-  }
-};
-
   </script>
-    <div id="imageModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modalImg">
-    </div>
 </body>
 </html>
