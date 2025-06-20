@@ -187,23 +187,23 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.getElementById("menuButton");
-      const menuContent = document.getElementById("menuContent");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menuButton");
+            const menuContent = document.getElementById("menuContent");
 
-      menuBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        menuContent.classList.toggle("visible");
-      });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                menuContent.classList.toggle("visible");
+            });
 
-      document.addEventListener("click", function () {
-        menuContent.classList.remove("visible");
-      });
+            document.addEventListener("click", function () {
+                menuContent.classList.remove("visible");
+            });
 
-      menuContent.addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
-    });
-  </script>
+            menuContent.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 </html>
