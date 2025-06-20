@@ -58,7 +58,7 @@
     }
 
     .fan-image {
-      width: 200px;
+      width: 240px;
       height: auto;
       border: 2px solid #ccc;
       border-radius: 8px;
@@ -66,8 +66,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       position: relative;
-      margin-left: -60px;
-      z-index: 1;
+      margin-left: -100px;
     }
 
     .fan-image:hover {
@@ -80,9 +79,20 @@
       margin-left: 0;
     }
 
-    .rotate-1 { transform: rotate(-10deg); }
-    .rotate-2 { transform: rotate(0deg); }
-    .rotate-3 { transform: rotate(10deg); }
+    .rotate-1 {
+      transform: rotate(-10deg);
+      z-index: 1;
+    }
+
+    .rotate-2 {
+      transform: rotate(0deg);
+      z-index: 2;
+    }
+
+    .rotate-3 {
+      transform: rotate(10deg);
+      z-index: 1;
+    }
 
     .modal {
       display: none;
@@ -185,8 +195,8 @@
       }
 
       .fan-image {
-        width: 150px;
-        margin-left: -40px;
+        width: 180px;
+        margin-left: -70px;
       }
     }
 
@@ -199,8 +209,8 @@
       }
 
       .fan-image {
-        width: 120px;
-        margin-left: -30px;
+        width: 140px;
+        margin-left: -50px;
       }
     }
   </style>
@@ -221,7 +231,6 @@
     </div>
   </main>
 
-  <!-- MODALE -->
   <div id="modal1" class="modal">
     <a href="#"><img src="img/spodnie_bezowe.jpg" class="modal-content" alt="Spodnie beżowe"></a>
   </div>
@@ -269,3 +278,4 @@
   </script>
 </body>
 </html>
+
